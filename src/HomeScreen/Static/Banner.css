@@ -1,4 +1,56 @@
 .Banner {
-    /* background-color: aqua; */
-    height: 60vh;
+    background-size: cover;
+    background-position: center center;
+    /* background-image: url('https://yodobi.com/4k-Wallpapers/anime-wallpapers-desktop-Is-4K-Wallpaper.jpg'); */
+    background-image: url('https://images8.alphacoders.com/910/thumb-1920-910288.jpg');
+    position: relative;
 }
+
+.main_banner{
+    height: 50vh;
+    margin: 0 2% 0 3%;
+    padding-top: 7%;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.main_banner_heading{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.2rem;
+    padding-bottom: 1rem;
+}
+
+.main_banner_info{
+    font-family: 'Open Sans', sans-serif;
+    max-width: 360px;
+    font-size: 1rem;
+    padding-bottom: 2rem;
+}
+
+.banner_fadeBottom{
+    height: 3rem;
+    width: 100%;
+    background-image: linear-gradient( 180deg , transparent , rgba(37,37,37,0.1) , #151515);
+    position: relative;
+    z-index: 2;
+}
+
+.banner_fadeLeft{
+    height: 100%;
+    background-image: linear-gradient( to left , transparent , rgba(37,37,37,0.8), #151515);
+    width: 40%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+@media screen and (max-width: 480px) {
+    .main_banner {
+    overflow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 40vh;
+    }
+  }
