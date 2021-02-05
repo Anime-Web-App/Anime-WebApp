@@ -10,8 +10,9 @@ const styles = {
         background: "#00FFFF",
         '&:hover': {
             background: "#202020",
-            color: '#00FFFF'
+            color: '#00FFFF',
         },
+        margin: "0 0 3rem 0"
     }
 
 }

@@ -3,11 +3,17 @@ import { NavLink } from "react-router-dom";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 import './Static/Nav.css'
   
 function Nav() {
 
     const [show, handleShow] = useState(false);
+    const [expand, setExpand] = useState(false);
+
+    const profile = () => setExpand(true);
+    const Shrink = () => setExpand(false);
     const useStyles = makeStyles((theme) => ({
         search: {
           position: 'relative',
@@ -37,7 +43,7 @@ function Nav() {
           color: 'inherit',
         },
         inputInput: {
-          padding: theme.spacing(1, 1, 1, 0),
+          // padding: theme.spacing(1, 1, 1, 0),
           // vertical padding + font size from searchIcon
           paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
           transition: theme.transitions.create('width'),
@@ -64,34 +70,48 @@ function Nav() {
 
     return (
         <div className={`nav ${show && "nav_black"}`}>
+            
+            <div className='navigation'>
             <img
                 className="nav_logo"
-                src="https://lh3.googleusercontent.com/proxy/jG3Hz87bROsgDzovDF1PV2pgkTIsMIpMz-kxyAcChe1Gc2Ftb2DVOvkuzkIOFcNGgAAnsrjjdAPQZAjuhWZOCoPpuLmAQ-GnJNrhk_oL5X2PaZpSt__UVzsWFmzjyOUZYRQPDsZS5coccFZahV_KjPI"
+                src="https://lh3.googleusercontent.com/proxy/L1uNLKSv95VndzXcOE69J7ZWnSnflTWskSqJDMN_g-02aQDtgzDt8Ypx_TX1qgHL_6G2tCkqHOd1LwUqgfBNxndLzlsF58ve2soJvGiX2_YE69MrGCHbPcPLtSaFDU8Rw6-35iJJWwaIbE-QP9VpxMw"
                 alt="logo"
             />
-            <div className='navigation'>
-                <NavLink to ='/'>Home</NavLink>
-                <NavLink to ='/index'>Index</NavLink>
-                <NavLink to ='/random'>Random</NavLink>
+                <NavLink to ='/' className='link'>Home</NavLink>
+                <NavLink to ='/index' className='link'>Index</NavLink>
+                <NavLink to ='/random' className='link'>Random</NavLink>
             </div>
-            <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+            <div className='right-div'>
+            <div className={classes.search} >
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+              />
             </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
             <img
                 className="nav_avatar"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmX1IYrleu5pZkTWvD6cBrp4E0knysir8f-A&usqp=CAU"
-                alt="Netflix Logo"
+                alt="Profile Logo"
+                onClick={profile}
+                onDoubleClickCapture={Shrink}
             />
+            
+          </div>
+          {expand?
+                <div className='list'>
+                    <div className='flex'>
+                        <ExitToAppIcon/>
+                        <span>Log Out</span>
+                    </div>    
+                </div>
+            :null}
         </div>
     )
 }

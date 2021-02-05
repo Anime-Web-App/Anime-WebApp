@@ -2,9 +2,10 @@
     padding-left: 3%;
     color: white;
     font-family: 'Oswald', sans-serif;
-    /* position: relative;
-    top: 2rem;
-    z-index: 2; */
+    font-size: 1.8rem;
+    position: relative;
+    top: -3rem;
+    z-index: 2;
 }
 
 
