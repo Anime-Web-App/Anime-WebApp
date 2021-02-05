@@ -1,0 +1,16 @@
+.Top_Anime{
+    padding-left: 3%;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    /* position: relative;
+    top: 2rem;
+    z-index: 2; */
+}
+
+
+@media screen and (min-width: 480px){
+    .Top_Anime{
+        /* position: relative;;
+        top: -1rem; */
+    }
+}

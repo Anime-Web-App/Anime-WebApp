@@ -1,0 +1,32 @@
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    height: 10vh;
+    z-index: 5;
+    /* when we use flex with fixed justify-content does not work the way we want   */
+    display: flex;
+    justify-content: space-between;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.nav_black{
+    background-color: #151515;
+}
+.nav_logo{
+    width: 150px;
+    padding-left: 3% !important;
+}
+.navigation{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_avatar{
+    /* position: fixed; */
+    padding-right:2%;
+    width: 55px;
+}
