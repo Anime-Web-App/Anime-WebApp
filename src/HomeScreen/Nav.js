@@ -18,9 +18,9 @@ function Nav() {
         search: {
           position: 'relative',
           borderRadius: theme.shape.borderRadius,
-          backgroundColor: fade(theme.palette.common.white, 0.15),
+          backgroundColor: fade(theme.palette.common.white, 0.85),
           '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
+            backgroundColor: fade(theme.palette.common.white, 1),
           }, 
           
           marginLeft: 0,
@@ -47,6 +47,7 @@ function Nav() {
           // vertical padding + font size from searchIcon
           paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
           transition: theme.transitions.create('width'),
+          height: '2.5vh',
           width: '100%',
           [theme.breakpoints.up('sm')]: {
             width: '12ch',
@@ -71,7 +72,7 @@ function Nav() {
     return (
         <div className={`nav ${show && "nav_black"}`}>
             
-            <div className='navigation'>
+            <div className='navigation' >
             <img
                 className="nav_logo"
                 src="https://lh3.googleusercontent.com/proxy/L1uNLKSv95VndzXcOE69J7ZWnSnflTWskSqJDMN_g-02aQDtgzDt8Ypx_TX1qgHL_6G2tCkqHOd1LwUqgfBNxndLzlsF58ve2soJvGiX2_YE69MrGCHbPcPLtSaFDU8Rw6-35iJJWwaIbE-QP9VpxMw"
@@ -100,19 +101,19 @@ function Nav() {
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmX1IYrleu5pZkTWvD6cBrp4E0knysir8f-A&usqp=CAU"
                 alt="Profile Logo"
                 onClick={profile}
-                onDoubleClickCapture={Shrink}
             />
             
           </div>
           {expand?
                 <div className='list'>
                     <div className='flex'>
-                        <ExitToAppIcon/>
+                        <ExitToAppIcon style={{fontSize:"1.2rem", paddingRight:'4px'}}/>
                         <span>Log Out</span>
                     </div>    
                 </div>
             :null}
         </div>
+        
     )
 }
 
