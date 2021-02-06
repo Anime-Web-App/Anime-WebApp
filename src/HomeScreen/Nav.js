@@ -12,15 +12,18 @@ function Nav() {
     const [show, handleShow] = useState(false);
     const [expand, setExpand] = useState(false);
 
-    const profile = () => setExpand(true);
-    const Shrink = () => setExpand(false);
+    const profile = () =>{ 
+      let val = expand;
+      (val=== false) ? setExpand(true) : setExpand(false);
+    };
+    
     const useStyles = makeStyles((theme) => ({
         search: {
           position: 'relative',
           borderRadius: theme.shape.borderRadius,
-          backgroundColor: fade(theme.palette.common.white, 0.85),
+          backgroundColor: fade(theme.palette.common.white, 1),
           '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 1),
+            backgroundColor: fade(theme.palette.common.white, 0.85),
           }, 
           
           marginLeft: 0,
